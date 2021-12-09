@@ -1,0 +1,19 @@
+<div class="header">
+  <mat-toolbar color="warn">
+    <span>Pedido</span>
+  </mat-toolbar>
+</div>
+
+<app-order-itens [itens]="orderService.itens"> </app-order-itens>
+
+<mat-toolbar>
+  <a routerLink="/cardapio" mat-raised-button>Incluir mais itens</a>
+  <span class="ml"></span>
+  <button mat-raised-button (click)="orderService.clearOrder()">
+    Limpar
+  </button>
+  <span class="flex-1"></span>
+  <button mat-raised-button color="accent" (click)="makeOrder()">
+    Concluir
+  </button>
+</mat-toolbar>

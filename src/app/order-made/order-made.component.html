@@ -1,0 +1,22 @@
+<div class="header">
+  <mat-toolbar color="warn">
+    <span>Acompanhe seu pedido</span>
+  </mat-toolbar>
+</div>
+
+<ng-container *ngIf="order">
+  <div class="pt pb">
+    <div class="info"><strong>Número do pedido:</strong> {{ order.id }}</div>
+    <div class="info">
+      <strong>Data e hora do pedido:</strong> {{ order.dataHour | date: "short" }}
+    </div>
+    <div class="info"><strong>Situação:</strong> {{ order.situation }}</div>
+  </div>
+
+  <app-order-itens [itens]="order.itens"> </app-order-itens>
+</ng-container>
+
+<mat-toolbar>
+  <a routerLink="/cardapio" mat-raised-button>Voltar para cardapio</a>
+  <span class="ml"></span>
+</mat-toolbar>

@@ -1,0 +1,14 @@
+<mat-list>
+  <mat-list-item *ngIf="itens.length == 0">Seu pedido está vazio.</mat-list-item>
+  <ng-container *ngFor="let item of itens">
+    <mat-list-item>
+      <span class="flex-1">{{ item.product.title }}</span>
+      <span>{{ item.quantity }} &times; R$
+        {{ item.product.price | number: "0.2-2" }}</span>
+    </mat-list-item>
+  </ng-container>
+  <mat-list-item>
+    <strong class="flex-1">Total</strong>
+    <strong>{{ itens | total | currency: 'BRL'}}</strong>
+  </mat-list-item>
+</mat-list>

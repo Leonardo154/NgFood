@@ -1,0 +1,32 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-title">{{this.modalService.product.title}}</h4>
+    <button type="button" class="close" aria-label="Close button" aria-describedby="modal-title"
+        (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <img src="{{this.modalService.product.img}}" alt="tiulo" width="450" height="300">
+    <p>
+        <span>
+            <strong>Preço:</strong> {{this.modalService.product.price | currency: 'BRL'}}
+        </span>
+    </p>
+    <p>
+        <span>
+            <strong>Categoria:</strong> {{this.modalService.product.category}}
+        </span>
+    </p>
+
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="sub()">-</button>
+    <span>
+        {{quantity}}
+    </span>
+    <button type="button" class="btn btn-light" (click)="add()">+</button>
+
+    <button type="button" ngbAutofocus class="btn btn-danger" (click)="addToCart(this.modalService.product, quantity)">
+        Adicionar Preço {{this.modalService.product.price | currency: 'BRL'}}
+    </button>
+</div>

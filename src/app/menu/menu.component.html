@@ -1,0 +1,39 @@
+<div class="header">
+  <mat-toolbar color="warn">
+    <mat-toolbar-row>
+      <span>Cardápio</span>
+      <span class="flex-1"></span>
+      <a mat-button routerLink="/pedido">VER PEDIDO</a>
+      <span class="flex-1"></span>
+      <span>R$ {{ orderService.total | number: "0.2-2" }}</span>
+      <mat-icon [matBadge]="orderService.totalQuantity" matBadgeColor="primary" routerLink="/pedido"
+        style="cursor: pointer">shopping_cart
+      </mat-icon>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
+
+<div style="display: block; margin-left: auto; margin-right: auto; max-width: 90vw;">
+  <h1 style="text-align: center; margin-top: 20px; font-size: 50px;">Destaques</h1>
+
+  <ng-container *ngFor="let category of categories; let i = index">
+    <h1>
+      {{category}}
+    </h1>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+      <ng-container *ngFor="let product of products">
+        <div class="col" *ngIf="product.category == category">
+          <div class="card border-dark" style="margin-bottom: 10px;" (click)="openModal(product)">
+            <img src="{{product.img}}" style="height: 200px;" class="card-img-top" alt="{{product.title}}">
+            <div class="card-body">
+              <h3 class="card-title" style="margin-bottom: -5px;">{{product.title}}</h3>
+              <h4 class="card-subtitle mb-1 text-muted">{{product.price | currency: 'BRL'}}</h4>
+              <p class="card-text text-center">Descrição do {{product.title}}.</p>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </ng-container>
+
+</div>

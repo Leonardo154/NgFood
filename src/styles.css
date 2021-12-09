@@ -1,1 +1,76 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../node_modules/bootstrap/dist/css/bootstrap-grid.min.css';
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: rgb(255, 255, 255);
+  overflow-y: scroll;
+}
+
+app-root {
+  display: block;
+  /* max-width: 600px; */
+  margin: auto;
+  background-color: white;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.mt {
+  margin-top: 16px;
+}
+
+.mb {
+  margin-bottom: 16px;
+}
+
+.ml {
+  margin-left: 16px;
+}
+
+.mr {
+  margin-right: 16px;
+}
+
+.pt {
+  padding-top: 16px;
+}
+
+.pb {
+  padding-bottom: 16px;
+}
+
+.pl {
+  padding-left: 16px;
+}
+
+.pr {
+  padding-right: 16px;
+}
+
+.fs-small {
+  font-size: smaller;
+}
+
+.info {
+  font-size: larger;
+  padding: 8px 16px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
